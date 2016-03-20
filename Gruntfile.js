@@ -2,7 +2,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-critical');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
+    var mozjpeg = require('imagemin');
 
     grunt.initConfig({
         critical: {
@@ -29,17 +31,28 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    
-                    {expand: true, cwd: 'src/', src: ['views/**', 'img/**'], dest: 'dist/'},
-                   
+
+                    { expand: true, cwd: 'src/', src: ['views/**'], dest: 'dist/' },
+
                 ],
             },
+        },
+        imagemin: { // Task 
+            dynamic: { // Another target 
+                files: [{
+                    expand: true, // Enable dynamic expansion 
+                    cwd: 'src/', // Src matches are relative to this path 
+                    src: ['**/*.{png,jpg,gif}'], // Actual patterns to match 
+                    dest: 'dist/' // Destination path prefix 
+                }]
+            }
         }
     });
 
     grunt.registerTask('default', [
         'critical',
         'uglify',
-        'copy'
+        'copy',
+        'imagemin'
     ]);
 };
