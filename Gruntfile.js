@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     var mozjpeg = require('imagemin');
 
@@ -46,6 +47,17 @@ module.exports = function(grunt) {
                     dest: 'dist/' // Destination path prefix 
                 }]
             }
+        },
+        htmlmin: { // Task 
+            dist: { // Target 
+                options: { // Target options 
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: { // Dictionary of files 
+                    'dist/index.html': 'src/index.html', // 'destination': 'source' 
+                }
+            }
         }
     });
 
@@ -53,6 +65,7 @@ module.exports = function(grunt) {
         'critical',
         'uglify',
         'copy',
-        'imagemin'
+        'imagemin',
+        'htmlmin'
     ]);
 };
