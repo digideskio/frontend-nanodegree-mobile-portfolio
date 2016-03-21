@@ -47,17 +47,6 @@ module.exports = function(grunt) {
                     dest: 'dist/' // Destination path prefix 
                 }]
             }
-        },
-        htmlmin: { // Task 
-            dist: { // Target 
-                options: { // Target options 
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: { // Dictionary of files 
-                    'dist/index.html': 'src/index.html', // 'destination': 'source' 
-                }
-            }
         }
     });
 
@@ -65,7 +54,6 @@ module.exports = function(grunt) {
         'critical',
         'uglify',
         'copy',
-        'imagemin',
-        'htmlmin'
+        'imagemin'        
     ]);
 };

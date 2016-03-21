@@ -8,7 +8,7 @@ The aim of this project was to
 
 Follow the steps below to set up the project
 
-1. CLone or download the repo.
+1. Clone or download the repo.
 2. Navigate to the project directory and run `npm install` to install all the node dependencies.
 3. Run `grunt` to apply automated optimizations like minification and image compression.
 4. The `dist` folder contains the production _optimized_ version and `src` folder contains the development version.
@@ -23,6 +23,6 @@ Follow the steps below to set up the project
 4. Achived 50% reduction in transferred bytes by minifying and combining scripts using `grunt-contrib-uglify` plugin.
 5. Removed render blocking CSS using `grunt-critical` plugin.
 6. Used `grunt-contrib-imagemin` plugin to optimize and compress images. This saved 103 KB of data.
-7. Used `grunt-contrib-htmlmin` to minify HTML files.
+
 
 After performing these optimizations, the Page Speed score improved to 95+ for both mobile and desktop.
