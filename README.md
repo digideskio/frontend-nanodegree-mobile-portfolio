@@ -26,3 +26,9 @@ Follow the steps below to set up the project
 
 
 After performing these optimizations, the Page Speed score improved to 95+ for both mobile and desktop.
+
+#### Part 2 - Optimize Frames per Second in pizza.html
+1. Wrap the function body inside requestAnimationFrame 
+2. Fetch and assign "scrollTop" outside of the loop
+3. Reduce the number of movable pizza elements from 200 to 30, since rest of the pizza elements are outside the viewport due to fixed positioning and
+performance depends on the number of elements modified.
